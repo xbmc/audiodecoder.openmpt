@@ -1,0 +1,21 @@
+Source: kodi-audiodecoder-openmpt
+Priority: extra
+Maintainer: Arne Morten Kvarving <cptspiff@gmail.com>
+Build-Depends: debhelper (>= 8.0.0), cmake, kodi-audiodecoder-dev,
+               kodi-addon-dev, libkodiplatform-dev, libopenmpt-dev
+Standards-Version: 3.9.2
+Section: libs
+
+Package: kodi-audiodecoder-openmpt
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: OpenMPT audio decoder for Kodi
+  OpenMPT audio decoder for Kodi
+
+Package: kodi-audiodecoder-openmpt-dbg
+Section: debug
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: debug symbols for OpenMPT audio decoder for Kodi
+  debug symbols for OpenMPT audio decoder for Kodi
