@@ -187,7 +187,7 @@ int64_t Seek(void* context, int64_t time)
 
   MPTContext* ctx = (MPTContext*)context;
 
-  return openmpt_module_set_position_seconds(ctx->module, time/1000.0);
+  return openmpt_module_set_position_seconds(ctx->module, time/1000.0)*1000.0;
 }
 
 //! \brief Deinitialize decoder
