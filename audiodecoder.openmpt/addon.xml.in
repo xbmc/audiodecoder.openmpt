@@ -11,14 +11,10 @@
     point="kodi.audiodecoder"
     name="mod"
     extension=".mod|.s3m|.xm|.it|.mptm|.stm|.nst|.m15|.stk|.st26|.ice|.wow|.ult|.669|.mtm|.med|.far|.mdl|.ams|.dsm|.amf|.okt|.dmf|.ptm|.psm|.mt2|.dbm|.digi|.imf|.j2b|.gdm|.umx|.xpk|.ppm|.mmcmp"
-    library_linux="audiodecoder.openmpt.so"
-    library_osx="audiodecoder.openmpt.dylib"
-    library_freebsd="audiodecoder.openmpt.so"
-    library_windx="audiodecoder.openmpt.dll"
-    library_android="libaudiodecoder.openmpt.so"/>
+    library_@PLATFORM@="@LIBRARY_FILENAME@"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">OpenMPT Audio Decoder</summary>
     <description lang="en">OpenMPT Audio Decoder</description>
-    <platform>all</platform>
+    <platform>@PLATFORM@</platform>
   </extension>
 </addon>
