@@ -1,8 +1,8 @@
 Source: kodi-audiodecoder-openmpt
 Priority: extra
 Maintainer: Arne Morten Kvarving <cptspiff@gmail.com>
-Build-Depends: debhelper (>= 8.0.0), cmake, kodi-audiodecoder-dev,
-               kodi-addon-dev, libkodiplatform-dev, libopenmpt-dev
+Build-Depends: debhelper (>= 8.0.0), cmake, kodi-addon-dev,
+               libkodiplatform-dev, libopenmpt-dev
 Standards-Version: 3.9.2
 Section: libs
 
