@@ -1,1 +1,1 @@
-openmpt http://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.2.4764-beta10-autotools.tar.gz
+openmpt https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.3.1+release.autotools.tar.gz
