@@ -11,7 +11,7 @@ find_package(kodiplatform REQUIRED)
 find_package(Openmpt REQUIRED)
 
 include_directories(${kodiplatform_INCLUDE_DIRS}
-                    ${KODI_INCLUDE_DIR}
+                    ${KODI_INCLUDE_DIR}/..
                     ${OPENMPT_INCLUDE_DIRS})
 
 set(OPENMPT_SOURCES src/OpenMptCodec.cpp)
