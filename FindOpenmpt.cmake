@@ -13,6 +13,10 @@ endif()
 
 if(NOT OPENMPT_FOUND)
   find_path(OPENMPT_INCLUDE_DIRS libopenmpt/libopenmpt.h)
+  find_path(OPENMPT_INCLUDE_CONFIG libopenmpt_config.h PATH_SUFFIXES libopenmpt)
+  if(OPENMPT_INCLUDE_CONFIG)
+    list(APPEND OPENMPT_INCLUDE_DIRS ${OPENMPT_INCLUDE_CONFIG})
+  endif()
   find_library(OPENMPT_LIBRARIES NAMES openmpt)
 endif()
 

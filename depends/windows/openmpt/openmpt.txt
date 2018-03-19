@@ -1,0 +1,1 @@
+openmpt https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.3.7+release.autotools.tar.gz
