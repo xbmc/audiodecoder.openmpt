@@ -9,14 +9,16 @@ enable_language(CXX)
 find_package(Kodi REQUIRED)
 find_package(kodiplatform REQUIRED)
 find_package(Openmpt REQUIRED)
+find_package(ZLIB REQUIRED)
 
 include_directories(${kodiplatform_INCLUDE_DIRS}
+                    ${ZLIB_INCLUDE_DIR}
                     ${KODI_INCLUDE_DIR}/..
                     ${OPENMPT_INCLUDE_DIRS})
 
 set(OPENMPT_SOURCES src/OpenMptCodec.cpp)
 
-set(DEPLIBS ${kodiplatform_LIBRARIES} ${OPENMPT_LIBRARIES})
+set(DEPLIBS ${kodiplatform_LIBRARIES} ${OPENMPT_LIBRARIES} ${ZLIB_LIBRARIES})
 
 build_addon(audiodecoder.openmpt OPENMPT DEPLIBS)
 
