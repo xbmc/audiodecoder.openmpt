@@ -2,7 +2,7 @@
 
 This is a [Kodi](http://kodi.tv) audio decoder addon for tracker module files.
 
-[![Build Status](https://travis-ci.org/notspiff/audiodecoder.openmpt.svg?branch=master)](https://travis-ci.org/notspiff/audiodecoder.openmpt)
+[![Build Status](https://travis-ci.org/xbmc/audiodecoder.openmpt.svg?branch=master)](https://travis-ci.org/xbmc/audiodecoder.openmpt)
 
 ## Build instructions
 
@@ -16,7 +16,7 @@ The following instructions assume you will have built Kodi already in the `kodi-
 suggested by the README.
 
 1. `git clone https://github.com/xbmc/xbmc.git`
-2. `git clone https://github.com/notspiff/audiodecoder.openmpt.git`
+2. `git clone https://github.com/xbmc/audiodecoder.openmpt.git`
 3. `cd audiodecoder.openmpt && mkdir build && cd build`
 4. `cmake -DADDONS_TO_BUILD=audiodecoder.openmpt -DADDON_SRC_PREFIX=../.. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../../xbmc/kodi-build/addons -DPACKAGE_ZIP=1 ../../xbmc/cmake/addons`
 5. `make`
