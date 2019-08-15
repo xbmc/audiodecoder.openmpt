@@ -47,8 +47,7 @@ struct MPTContext
   kodi::vfs::CFile file;
 };
 
-class CMPTCodec : public kodi::addon::CInstanceAudioDecoder,
-                  public kodi::addon::CAddonBase
+class ATTRIBUTE_HIDDEN CMPTCodec : public kodi::addon::CInstanceAudioDecoder
 {
 public:
   CMPTCodec(KODI_HANDLE instance) :
