@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.5)
 
 project(openmpt VERSION 0.3.7 LANGUAGES CXX)
 
