@@ -59,11 +59,11 @@ public:
       openmpt_module_destroy(ctx.module);
   }
 
-  virtual bool Init(const std::string& filename, unsigned int filecache,
-                    int& channels, int& samplerate,
-                    int& bitspersample, int64_t& totaltime,
-                    int& bitrate, AEDataFormat& format,
-                    std::vector<AEChannel>& channellist) override
+  bool Init(const std::string& filename, unsigned int filecache,
+            int& channels, int& samplerate,
+            int& bitspersample, int64_t& totaltime,
+            int& bitrate, AEDataFormat& format,
+            std::vector<AEChannel>& channellist) override
   {
     if (!ctx.file.OpenFile(filename,READ_CACHED))
       return false;
@@ -73,6 +73,10 @@ public:
     ctx.module = openmpt_module_create2(callbacks, &ctx.file, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr);
     if (!ctx.module)
       return false;
+
+    const char* keys = openmpt_module_get_metadata_keys(ctx.module);
+
+    fprintf(stderr, "keays = '%s'\n", keys);
 
     channels = 2;
     samplerate = 48000;
@@ -85,7 +89,7 @@ public:
     return true;
   }
 
-  virtual int ReadPCM(uint8_t* buffer, int size, int& actualsize) override
+  int ReadPCM(uint8_t* buffer, int size, int& actualsize) override
   {
     if ((actualsize = openmpt_module_read_interleaved_float_stereo(ctx.module, 48000, size/8, (float*)buffer)*8) == size)
       return 0;
@@ -93,9 +97,32 @@ public:
     return 1;
   }
 
-  virtual int64_t Seek(int64_t time) override
+  int64_t Seek(int64_t time) override
   {
     return openmpt_module_set_position_seconds(ctx.module, time/1000.0)*1000.0;
+  }
+
+  bool ReadTag(const std::string& file, std::string& title,
+               std::string& artist, int& length) override
+  {
+    if (!ctx.file.OpenFile(file,READ_CACHED))
+      return false;
+
+    static openmpt_stream_callbacks callbacks = { vfs_file_fread, vfs_file_fseek, vfs_file_ftell };
+
+    ctx.module = openmpt_module_create2(callbacks, &ctx.file, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr);
+    if (!ctx.module)
+      return false;
+
+    std::string keys = openmpt_module_get_metadata_keys(ctx.module);
+    if (keys.find("artist") != std::string::npos)
+      artist = openmpt_module_get_metadata(ctx.module, "artist");
+    if (keys.find("title") != std::string::npos)
+      title = openmpt_module_get_metadata(ctx.module, "title");
+
+    length = openmpt_module_get_duration_seconds(ctx.module);
+
+    return true;
   }
 
 private:
@@ -106,15 +133,13 @@ private:
 class ATTRIBUTE_HIDDEN CMyAddon : public kodi::addon::CAddonBase
 {
 public:
-  CMyAddon() { }
-  virtual ADDON_STATUS CreateInstance(int instanceType, std::string instanceID, KODI_HANDLE instance, KODI_HANDLE& addonInstance) override
+  CMyAddon() = default;
+  ADDON_STATUS CreateInstance(int instanceType, std::string instanceID, KODI_HANDLE instance, KODI_HANDLE& addonInstance) override
   {
     addonInstance = new CMPTCodec(instance);
     return ADDON_STATUS_OK;
   }
-  virtual ~CMyAddon()
-  {
-  }
+  virtual ~CMyAddon() = default;
 };
 
 

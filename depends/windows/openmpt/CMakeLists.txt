@@ -18,16 +18,25 @@ add_library(${PROJECT_NAME}
   common/Logging.h
   common/misc_util.cpp
   common/misc_util.h
+  common/mptAlloc.cpp
+  common/mptAlloc.h
+  common/mptAssert.h
+  common/mptBaseMacros.h
+  common/mptBaseTypes.h
+  common/mptBaseUtils.h
   common/mptBufferIO.h
   common/mptCPU.cpp
   common/mptCPU.h
   common/mptCRC.h
+  common/mptException.h
+  common/mptExceptionText.h
   common/mptFileIO.cpp
   common/mptFileIO.h
   common/mptIO.cpp
   common/mptIO.h
   common/mptLibrary.cpp
   common/mptLibrary.h
+  common/mptMemory.h
   common/mptMutex.h
   common/mptOS.cpp
   common/mptOS.h
@@ -35,8 +44,11 @@ add_library(${PROJECT_NAME}
   common/mptPathString.h
   common/mptRandom.cpp
   common/mptRandom.h
+  common/mptSpan.h
   common/mptString.cpp
   common/mptString.h
+  common/mptStringBuffer.cpp
+  common/mptStringBuffer.h
   common/mptStringFormat.cpp
   common/mptStringFormat.h
   common/mptStringParse.cpp
@@ -44,7 +56,6 @@ add_library(${PROJECT_NAME}
   common/mptThread.h
   common/mptTime.cpp
   common/mptTime.h
-  common/mptTypeTraits.h
   common/mptUUID.cpp
   common/mptUUID.h
   common/mptWine.cpp
@@ -53,11 +64,7 @@ add_library(${PROJECT_NAME}
   common/Profiler.h
   common/serialization_utils.cpp
   common/serialization_utils.h
-  common/stdafx.cpp
   common/stdafx.h
-  common/StringFixer.h
-  common/typedefs.cpp
-  common/typedefs.h
   common/version.cpp
   common/version.h
   common/versionNumber.h
@@ -91,6 +98,7 @@ add_library(${PROJECT_NAME}
   soundlib/AudioCriticalSection.cpp
   soundlib/AudioCriticalSection.h
   soundlib/AudioReadTarget.h
+  soundlib/BitReader.h
   soundlib/ChunkReader.h
   soundlib/Container.h
   soundlib/ContainerMMCMP.cpp
@@ -112,6 +120,7 @@ add_library(${PROJECT_NAME}
   soundlib/Load_669.cpp
   soundlib/Load_amf.cpp
   soundlib/Load_ams.cpp
+  soundlib/Load_c67.cpp
   soundlib/Load_dbm.cpp
   soundlib/Load_digi.cpp
   soundlib/Load_dmf.cpp
@@ -176,6 +185,9 @@ add_library(${PROJECT_NAME}
   soundlib/MPEGFrame.h
   soundlib/OggStream.cpp
   soundlib/OggStream.h
+  soundlib/opal.h
+  soundlib/OPL.cpp
+  soundlib/OPL.h
   soundlib/pattern.cpp
   soundlib/pattern.h
   soundlib/patternContainer.cpp
