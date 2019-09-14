@@ -15,5 +15,9 @@
     <summary lang="en">OpenMPT Audio Decoder</summary>
     <description lang="en">OpenMPT Audio Decoder</description>
     <platform>@PLATFORM@</platform>
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+    </assets>
   </extension>
 </addon>
