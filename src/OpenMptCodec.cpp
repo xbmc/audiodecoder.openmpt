@@ -74,6 +74,10 @@ public:
     if (!ctx.module)
       return false;
 
+    const char* keys = openmpt_module_get_metadata_keys(ctx.module);
+
+    fprintf(stderr, "keays = '%s'\n", keys);
+
     channels = 2;
     samplerate = 48000;
     bitspersample = 32;
@@ -96,6 +100,29 @@ public:
   int64_t Seek(int64_t time) override
   {
     return openmpt_module_set_position_seconds(ctx.module, time/1000.0)*1000.0;
+  }
+
+  bool ReadTag(const std::string& file, std::string& title,
+               std::string& artist, int& length) override
+  {
+    if (!ctx.file.OpenFile(file,READ_CACHED))
+      return false;
+
+    static openmpt_stream_callbacks callbacks = { vfs_file_fread, vfs_file_fseek, vfs_file_ftell };
+
+    ctx.module = openmpt_module_create2(callbacks, &ctx.file, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr);
+    if (!ctx.module)
+      return false;
+
+    std::string keys = openmpt_module_get_metadata_keys(ctx.module);
+    if (keys.find("artist") != std::string::npos)
+      artist = openmpt_module_get_metadata(ctx.module, "artist");
+    if (keys.find("title") != std::string::npos)
+      title = openmpt_module_get_metadata(ctx.module, "title");
+
+    length = openmpt_module_get_duration_seconds(ctx.module);
+
+    return true;
   }
 
 private:
