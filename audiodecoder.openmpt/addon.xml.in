@@ -20,6 +20,8 @@ It supports loading of IT (Impulse Tracker), XM (FastTracker Extended Module), M
 See his website for complete list of supported types.
 </description>
     <platform>@PLATFORM@</platform>
+    <license>GPL-2.0</license>
+    <source>https://github.com/xbmc/audiodecoder.openmpt</source>
     <assets>
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>
