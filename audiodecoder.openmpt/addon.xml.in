@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
   id="audiodecoder.openmpt"
-  version="2.0.2"
+  version="2.0.3"
   name="OpenMPT Audio Decoder"
   provider-name="spiff">
   <requires>@ADDON_DEPENDS@</requires>
@@ -20,6 +20,8 @@ It supports loading of IT (Impulse Tracker), XM (FastTracker Extended Module), M
 See his website for complete list of supported types.
 </description>
     <platform>@PLATFORM@</platform>
+    <license>GPL-2.0</license>
+    <source>https://github.com/xbmc/audiodecoder.openmpt</source>
     <assets>
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>
