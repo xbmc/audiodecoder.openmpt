@@ -3,6 +3,7 @@
 This is a [Kodi](http://kodi.tv) audio decoder addon for tracker module files.
 
 [![Build Status](https://travis-ci.org/xbmc/audiodecoder.openmpt.svg?branch=master)](https://travis-ci.org/xbmc/audiodecoder.openmpt)
+[![Build Status](https://dev.azure.com/teamkodi/binary-addons/_apis/build/status/xbmc.audiodecoder.openmpt?branchName=Leia)](https://dev.azure.com/teamkodi/binary-addons/_build/latest?definitionId=10&branchName=Leia)
 
 ## Build instructions
 
