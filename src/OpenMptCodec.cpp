@@ -37,8 +37,8 @@ struct MPTContext
 class ATTRIBUTE_HIDDEN CMPTCodec : public kodi::addon::CInstanceAudioDecoder
 {
 public:
-  CMPTCodec(KODI_HANDLE instance) :
-    CInstanceAudioDecoder(instance) {}
+  CMPTCodec(KODI_HANDLE instance, const std::string& version) :
+    CInstanceAudioDecoder(instance, version) {}
 
   virtual ~CMPTCodec()
   {
@@ -52,7 +52,7 @@ public:
             int& bitrate, AEDataFormat& format,
             std::vector<AEChannel>& channellist) override
   {
-    if (!ctx.file.OpenFile(filename,READ_CACHED))
+    if (!ctx.file.OpenFile(filename, ADDON_READ_CACHED))
       return false;
 
     static openmpt_stream_callbacks callbacks = { vfs_file_fread, vfs_file_fseek, vfs_file_ftell };
@@ -92,7 +92,7 @@ public:
   bool ReadTag(const std::string& file, std::string& title,
                std::string& artist, int& length) override
   {
-    if (!ctx.file.OpenFile(file,READ_CACHED))
+    if (!ctx.file.OpenFile(file, ADDON_READ_CACHED))
       return false;
 
     static openmpt_stream_callbacks callbacks = { vfs_file_fread, vfs_file_fseek, vfs_file_ftell };
@@ -121,9 +121,9 @@ class ATTRIBUTE_HIDDEN CMyAddon : public kodi::addon::CAddonBase
 {
 public:
   CMyAddon() = default;
-  ADDON_STATUS CreateInstance(int instanceType, std::string instanceID, KODI_HANDLE instance, KODI_HANDLE& addonInstance) override
+  ADDON_STATUS CreateInstance(int instanceType, const std::string& instanceID, KODI_HANDLE instance, const std::string& version, KODI_HANDLE& addonInstance) override
   {
-    addonInstance = new CMPTCodec(instance);
+    addonInstance = new CMPTCodec(instance, version);
     return ADDON_STATUS_OK;
   }
   virtual ~CMyAddon() = default;
