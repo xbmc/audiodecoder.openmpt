@@ -28,7 +28,7 @@ static int64_t vfs_file_ftell( void * handle )
   return file->GetPosition();
 }
 
-struct MPTContext
+struct ATTRIBUTE_HIDDEN MPTContext
 {
   openmpt_module* module = nullptr;
   kodi::vfs::CFile file;
@@ -49,8 +49,8 @@ public:
   bool Init(const std::string& filename, unsigned int filecache,
             int& channels, int& samplerate,
             int& bitspersample, int64_t& totaltime,
-            int& bitrate, AEDataFormat& format,
-            std::vector<AEChannel>& channellist) override
+            int& bitrate, AudioEngineDataFormat& format,
+            std::vector<AudioEngineChannel>& channellist) override
   {
     if (!ctx.file.OpenFile(filename, ADDON_READ_CACHED))
       return false;
@@ -69,8 +69,8 @@ public:
     samplerate = 48000;
     bitspersample = 32;
     totaltime = openmpt_module_get_duration_seconds(ctx.module)*1000;
-    format = AE_FMT_FLOAT;
-    channellist = { AE_CH_FL, AE_CH_FR };
+    format = AUDIOENGINE_FMT_FLOAT;
+    channellist = { AUDIOENGINE_CH_FL, AUDIOENGINE_CH_FR };
     bitrate = openmpt_module_get_num_channels(ctx.module);
 
     return true;
@@ -89,10 +89,9 @@ public:
     return openmpt_module_set_position_seconds(ctx.module, time/1000.0)*1000.0;
   }
 
-  bool ReadTag(const std::string& file, std::string& title,
-               std::string& artist, int& length) override
+  bool ReadTag(const std::string& filename, kodi::addon::AudioDecoderInfoTag& tag) override
   {
-    if (!ctx.file.OpenFile(file, ADDON_READ_CACHED))
+    if (!ctx.file.OpenFile(filename, ADDON_READ_CACHED))
       return false;
 
     static openmpt_stream_callbacks callbacks = { vfs_file_fread, vfs_file_fseek, vfs_file_ftell };
@@ -103,11 +102,11 @@ public:
 
     std::string keys = openmpt_module_get_metadata_keys(ctx.module);
     if (keys.find("artist") != std::string::npos)
-      artist = openmpt_module_get_metadata(ctx.module, "artist");
+      tag.SetArtist(openmpt_module_get_metadata(ctx.module, "artist"));
     if (keys.find("title") != std::string::npos)
-      title = openmpt_module_get_metadata(ctx.module, "title");
+      tag.SetTitle(openmpt_module_get_metadata(ctx.module, "title"));
 
-    length = openmpt_module_get_duration_seconds(ctx.module);
+    tag.SetDuration(openmpt_module_get_duration_seconds(ctx.module));
 
     return true;
   }
