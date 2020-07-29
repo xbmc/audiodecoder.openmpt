@@ -12,6 +12,7 @@ include_directories(${ZLIB_INCLUDE_DIR}
                     ${OPENMPT_INCLUDE_DIRS})
 
 set(OPENMPT_SOURCES src/OpenMptCodec.cpp)
+set(OPENMPT_HEADERS src/OpenMptCodec.h)
 
 set(DEPLIBS ${OPENMPT_LIBRARIES} ${ZLIB_LIBRARIES})
 
