@@ -101,12 +101,76 @@ bool CMPTCodec::ReadTag(const std::string& filename, kodi::addon::AudioDecoderIn
   if (!ctx.module)
     return false;
 
-  std::string keys = openmpt_module_get_metadata_keys(ctx.module);
-  if (keys.find("artist") != std::string::npos)
-    tag.SetArtist(openmpt_module_get_metadata(ctx.module, "artist"));
-  if (keys.find("title") != std::string::npos)
-    tag.SetTitle(openmpt_module_get_metadata(ctx.module, "title"));
+  const char* ckeys = openmpt_module_get_metadata_keys(ctx.module);
+  std::string keys = ckeys;
+  openmpt_free_string(ckeys);
 
+  if (keys.find("artist") != std::string::npos)
+  {
+    const char* text = openmpt_module_get_metadata(ctx.module, "artist");
+    if (text)
+    {
+      tag.SetArtist(text);
+      openmpt_free_string(text);
+    }
+  }
+  if (keys.find("title") != std::string::npos)
+  {
+    const char* text = openmpt_module_get_metadata(ctx.module, "title");
+    if (text)
+    {
+      tag.SetTitle(text);
+      openmpt_free_string(text);
+    }
+  }
+  if (keys.find("album") != std::string::npos)
+  {
+    const char* text = openmpt_module_get_metadata(ctx.module, "album");
+    if (text)
+    {
+      tag.SetAlbum(text);
+      openmpt_free_string(text);
+    }
+  }
+  if (keys.find("year") != std::string::npos)
+  {
+    const char* text = openmpt_module_get_metadata(ctx.module, "year");
+    if (text)
+    {
+      tag.SetReleaseDate(text);
+      openmpt_free_string(text);
+    }
+  }
+  if (keys.find("genre") != std::string::npos)
+  {
+    const char* text = openmpt_module_get_metadata(ctx.module, "genre");
+    if (text)
+    {
+      tag.SetGenre(text);
+      openmpt_free_string(text);
+    }
+  }
+  if (keys.find("track number") != std::string::npos)
+  {
+    const char* text = openmpt_module_get_metadata(ctx.module, "track number");
+    if (text)
+    {
+      tag.SetTrack(atoi(text));
+      openmpt_free_string(text);
+    }
+  }
+  if (keys.find("comments") != std::string::npos)
+  {
+    const char* text = openmpt_module_get_metadata(ctx.module, "comments");
+    if (text)
+    {
+      tag.SetComment(text);
+      openmpt_free_string(text);
+    }
+  }
+
+  tag.SetChannels(2);
+  tag.SetSamplerate(48000);
   tag.SetDuration(openmpt_module_get_duration_seconds(ctx.module));
 
   return true;
