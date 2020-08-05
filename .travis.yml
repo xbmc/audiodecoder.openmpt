@@ -18,7 +18,7 @@ matrix:
       sudo: required
       compiler: gcc
     - os: linux
-      dist: xenial
+      dist: bionic
       sudo: required
       compiler: clang
     - os: linux
