@@ -69,7 +69,7 @@ bool CMPTCodec::Init(const std::string& filename,
   totaltime = openmpt_module_get_duration_seconds(ctx.module) * 1000;
   format = AUDIOENGINE_FMT_FLOAT;
   channellist = {AUDIOENGINE_CH_FL, AUDIOENGINE_CH_FR};
-  bitrate = openmpt_module_get_num_channels(ctx.module);
+  bitrate = samplerate * bitspersample * channels;
 
   return true;
 }
