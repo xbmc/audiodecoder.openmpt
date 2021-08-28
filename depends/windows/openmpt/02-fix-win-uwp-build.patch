@@ -1,0 +1,55 @@
+--- a/common/mptPathString.cpp
++++ b/common/mptPathString.cpp
+@@ -32,10 +32,6 @@
+ 
+ RawPathString PathString::AsNativePrefixed() const
+ {
+-#if MPT_OS_WINDOWS_WINRT && (_WIN32_WINNT < 0x0a00)
+-	// For WinRT on Windows 8, there is no official wy to determine an absolute path.
+-	return path;
+-#else
+ 	if(path.length() < MAX_PATH || path.substr(0, 4) == PL_("\\\\?\\"))
+ 	{
+ 		// Path is short enough or already in prefixed form
+@@ -51,7 +47,6 @@ RawPathString PathString::AsNativePrefixed() const
+ 		// Regular file: C:\foo.bar -> \\?\C:\foo.bar
+ 		return PL_("\\\\?\\") + absPath;
+ 	}
+-#endif
+ }
+ 
+ 
+@@ -435,8 +430,6 @@
+ 
+ #if MPT_OS_WINDOWS
+ 
+-#if !(MPT_OS_WINDOWS_WINRT && (_WIN32_WINNT < 0x0a00))
+-
+ mpt::PathString GetAbsolutePath(const mpt::PathString &path)
+ {
+ 	DWORD size = GetFullPathName(path.AsNative().c_str(), 0, nullptr, nullptr);
+@@ -452,8 +445,6 @@ mpt::PathString GetAbsolutePath(const mpt::PathString &path)
+ 	return mpt::PathString::FromNative(fullPathName.data());
+ }
+ 
+-#endif
+-
+ #ifdef MODPLUG_TRACKER
+ 
+ bool DeleteWholeDirectoryTree(mpt::PathString path)
+--- a/common/mptPathString.h
++++ b/common/mptPathString.h
+@@ -321,13 +321,9 @@
+ 
+ #if MPT_OS_WINDOWS
+ 
+-#if !(MPT_OS_WINDOWS_WINRT && (_WIN32_WINNT < 0x0a00))
+-
+ // Returns the absolute path for a potentially relative path and removes ".." or "." components. (same as GetFullPathNameW)
+ mpt::PathString GetAbsolutePath(const mpt::PathString &path);
+ 
+-#endif
+-
+ #ifdef MODPLUG_TRACKER
+ 
+ // Deletes a complete directory tree. Handle with EXTREME care.
