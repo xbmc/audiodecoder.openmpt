@@ -23,4 +23,3 @@ msgstr ""
 msgctxt "Addon Description"
 msgid "OpenMPT (short hand for Open ModPlug Tracker) is completely free and his library allows you play back some great music on your Kodi.[CR][CR]It supports loading of IT (Impulse Tracker), XM (FastTracker Extended Module), MOD (ProTracker and similar), S3M (Scream Tracker 3) and MPTM (its own file format) files, imports many more module and sample file formats.[CR][CR]See his website for complete list of supported types."
 msgstr ""
-
