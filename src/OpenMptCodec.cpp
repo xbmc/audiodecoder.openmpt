@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2005-2020 Team Kodi (https://kodi.tv)
+ *  Copyright (C) 2005-2021 Team Kodi (https://kodi.tv)
  *
  *  SPDX-License-Identifier: GPL-2.0-or-later
  *  See LICENSE.md for more information.
@@ -69,7 +69,7 @@ bool CMPTCodec::Init(const std::string& filename,
   totaltime = openmpt_module_get_duration_seconds(ctx.module) * 1000;
   format = AUDIOENGINE_FMT_FLOAT;
   channellist = {AUDIOENGINE_CH_FL, AUDIOENGINE_CH_FR};
-  bitrate = openmpt_module_get_num_channels(ctx.module);
+  bitrate = samplerate * bitspersample * channels;
 
   return true;
 }
