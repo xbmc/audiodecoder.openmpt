@@ -11,13 +11,13 @@
 #include <kodi/addon-instance/AudioDecoder.h>
 #include <libopenmpt/libopenmpt.h>
 
-struct ATTRIBUTE_HIDDEN MPTContext
+struct ATTR_DLL_LOCAL MPTContext
 {
   openmpt_module* module = nullptr;
   kodi::vfs::CFile file;
 };
 
-class ATTRIBUTE_HIDDEN CMPTCodec : public kodi::addon::CInstanceAudioDecoder
+class ATTR_DLL_LOCAL CMPTCodec : public kodi::addon::CInstanceAudioDecoder
 {
 public:
   CMPTCodec(KODI_HANDLE instance, const std::string& version);
@@ -32,7 +32,7 @@ public:
             int& bitrate,
             AudioEngineDataFormat& format,
             std::vector<AudioEngineChannel>& channellist) override;
-  int ReadPCM(uint8_t* buffer, int size, int& actualsize) override;
+  int ReadPCM(uint8_t* buffer, size_t size, size_t& actualsize) override;
   int64_t Seek(int64_t time) override;
   bool ReadTag(const std::string& filename, kodi::addon::AudioDecoderInfoTag& tag) override;
 

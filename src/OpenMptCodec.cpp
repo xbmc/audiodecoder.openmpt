@@ -74,14 +74,14 @@ bool CMPTCodec::Init(const std::string& filename,
   return true;
 }
 
-int CMPTCodec::ReadPCM(uint8_t* buffer, int size, int& actualsize)
+int CMPTCodec::ReadPCM(uint8_t* buffer, size_t size, size_t& actualsize)
 {
   if ((actualsize = openmpt_module_read_interleaved_float_stereo(ctx.module, 48000, size / 8,
                                                                  (float*)buffer) *
                     8) == size)
-    return 0;
+    return AUDIODECODER_READ_SUCCESS;
 
-  return 1;
+  return AUDIODECODER_READ_EOF;
 }
 
 int64_t CMPTCodec::Seek(int64_t time)
@@ -178,7 +178,7 @@ bool CMPTCodec::ReadTag(const std::string& filename, kodi::addon::AudioDecoderIn
 
 //------------------------------------------------------------------------------
 
-class ATTRIBUTE_HIDDEN CMyAddon : public kodi::addon::CAddonBase
+class ATTR_DLL_LOCAL CMyAddon : public kodi::addon::CAddonBase
 {
 public:
   CMyAddon() = default;

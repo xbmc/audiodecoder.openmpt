@@ -23,3 +23,267 @@ msgstr ""
 msgctxt "Addon Description"
 msgid "OpenMPT (short hand for Open ModPlug Tracker) is completely free and his library allows you play back some great music on your Kodi.[CR][CR]It supports loading of IT (Impulse Tracker), XM (FastTracker Extended Module), MOD (ProTracker and similar), S3M (Scream Tracker 3) and MPTM (its own file format) files, imports many more module and sample file formats.[CR][CR]See his website for complete list of supported types."
 msgstr ""
+
+#. Supported file extension description about ".mptm"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30100"
+msgid "MPTM is OpenMPT’s own format. It is based on the IT format."
+msgstr ""
+
+#. Supported file extension description about ".mod"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30101"
+msgid "The ProTracker MOD format."
+msgstr ""
+
+#. Supported file extension description about ".s3m"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30102"
+msgid "Audio module format used by Scream Tracker 3.0 and later."
+msgstr ""
+
+#. Supported file extension description about ".xm"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30103"
+msgid "Music module created by Fasttracker 2, an audio tracker program."
+msgstr ""
+
+#. Supported file extension description about ".it"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30104"
+msgid "Music module created by Impulse Tracker, an audio tracking program."
+msgstr ""
+
+#. Supported file extension description about ".669"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30105"
+msgid "Composer 669 / UNIS 669."
+msgstr ""
+
+#. Supported file extension description about ".amf"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30106"
+msgid "ASYLUM Music Format / Advanced Music Format."
+msgstr ""
+
+#. Supported file extension description about ".ams"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30107"
+msgid "Extreme’s Tracker / Velvet Studio."
+msgstr ""
+
+#. Supported file extension description about ".c67"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30108"
+msgid "Composer 670 / CDFM."
+msgstr ""
+
+#. Supported file extension description about ".dbm"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30109"
+msgid "DigiBoosterPro - An audio composing software for Amiga computers with AmigaOS operating system."
+msgstr ""
+
+#. Supported file extension description about ".digi"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30110"
+msgid "DIGIBooster - A music composing software also known as tracker, developed for AmigaOS 3/4 and MorphOS."
+msgstr ""
+
+#. Supported file extension description about ".dmf"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30111"
+msgid "Associated with the \"Delusion/Xtracker\", a music composing and audio editing software."
+msgstr ""
+
+#. Supported file extension description about ".dsm"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30112"
+msgid "The dsm file extension is associated with the digital sound module, 8-bit mono tracker format."
+msgstr ""
+
+#. Supported file extension description about ".dtm"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30113"
+msgid "Is associated with the Digitrakker, an audio editing software for MS-DOS also known as tracker."
+msgstr ""
+
+#. Supported file extension description about ".far"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30114"
+msgid "Audio format from Farandole Composer."
+msgstr ""
+
+#. Supported file extension description about ".imf"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30115"
+msgid "Imago Orpheus."
+msgstr ""
+
+#. Supported file extension description about ".ice"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30116"
+msgid "Ice Tracker."
+msgstr ""
+
+#. Supported file extension description about ".j2b"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30117"
+msgid "Is associated with the \"Jazz Jackrabbit 2\" video game, developed by Epic Games."
+msgstr ""
+
+#. Supported file extension description about ".m15"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30118"
+msgid "SoundTracker and compatible."
+msgstr ""
+
+#. Supported file extension description about ".mdl"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30119"
+msgid "The 8 or 16-bit mono sound format used by \"Digital Tracker\" or \"DigiTrakker\"."
+msgstr ""
+
+#. Supported file extension description about ".med"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30120"
+msgid "OctaMED - The med file stores audio data in 8-bit sound format."
+msgstr ""
+
+#. Supported file extension description about ".mms"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30121"
+msgid "MultiMedia Sound."
+msgstr ""
+
+#. Supported file extension description about ".mt2"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30122"
+msgid "The mt2 file extension is associated with teh \"MadTracker 2\", a music composing software."
+msgstr ""
+
+#. Supported file extension description about ".mtm"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30123"
+msgid "Associated with the \"MultiTracker\" music module format, supported by old music composing programs."
+msgstr ""
+
+#. Supported file extension description about ".nst"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30124"
+msgid "The extension is used by \"NoiseTracker\", an audio editing and music composing software."
+msgstr ""
+
+#. Supported file extension description about ".okt"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30125"
+msgid "The okt file extension is associated with the Oktalyzer a music tracker for Amiga computers."
+msgstr ""
+
+#. Supported file extension description about ".plm"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30126"
+msgid "The extension is related to the \"DisorderTracker2\", a music composing software for MS-DOS."
+msgstr ""
+
+#. Supported file extension description about ".psm"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30127"
+msgid "File extension psm is mainly associated with old computer games developed by the Epic MegaGames."
+msgstr ""
+
+#. Supported file extension description about ".pt36"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30128"
+msgid "ProTracker 3.6 IFF."
+msgstr ""
+
+#. Supported file extension description about ".ptm"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30129"
+msgid "The ptm file extension is associated with the \"Poly Tracker\", a music composing tool."
+msgstr ""
+
+#. Supported file extension description about ".sfx"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30130"
+msgid "An SFX file is an audio file saved in the SoundFX format."
+msgstr ""
+
+#. Supported file extension description about ".sfx2"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30131"
+msgid "SoundFX format - 2.0 version has 30 instruments (1.x have 15 instruments)."
+msgstr ""
+
+#. Supported file extension description about ".st26"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30132"
+msgid "SoundTracker 2.6."
+msgstr ""
+
+#. Supported file extension description about ".stk"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30133"
+msgid "Soundtracker."
+msgstr ""
+
+#. Supported file extension description about ".stm"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30134"
+msgid "The stm file extension is related to the \"ScreamTracker\", a music composing software for MS-DOS."
+msgstr ""
+
+#. Supported file extension description about ".stp"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30135"
+msgid "Soundtracker Pro II."
+msgstr ""
+
+#. Supported file extension description about ".ult"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30136"
+msgid "The extension is related to the UltraTracker, an obsolete audio composing program probably for Amiga PCs."
+msgstr ""
+
+#. Supported file extension description about ".wow"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30137"
+msgid "The wow file is associated with an audio module format use by the Grave Composer."
+msgstr ""
+
+#. Supported file extension description about ".gdm"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30138"
+msgid "General Digital Music."
+msgstr ""
+
+#. Supported file extension description about ".mo3"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30139"
+msgid "Un4seen MO3."
+msgstr ""
+
+#. Supported file extension description about ".umx"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30140"
+msgid "Unreal Music (.umx) [I]only from Unreal (Tournament 1), Deus Ex and Jazz Jackrabbit 3D[/I]."
+msgstr ""
+
+#. Supported file extension description about ".xpk"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30141"
+msgid "The extension is associated with XPK Player developed by DATA Becker. File contains compressed audio data."
+msgstr ""
+
+#. Supported file extension description about ".ppm"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30142"
+msgid "PowerPack PP20."
+msgstr ""
+
+#. Supported file extension description about ".mmcmp"
+#: audiodecoder.openmpt/addon.xml.in
+msgctxt "#30143"
+msgid "MMCMP, Music Module Compressor."
+msgstr ""

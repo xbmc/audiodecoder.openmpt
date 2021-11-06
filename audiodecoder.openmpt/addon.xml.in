@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
   id="audiodecoder.openmpt"
-  version="20.0.0"
+  version="20.1.0"
   name="OpenMPT Audio Decoder"
   provider-name="spiff">
   <requires>@ADDON_DEPENDS@</requires>
@@ -9,8 +9,142 @@
     point="kodi.audiodecoder"
     name="mod"
     tags="true"
-    extension=".mptm|.mod|.s3m|.xm|.it|.669|.amf|.ams|.c67|.dbm|.digi|.dmf|.dsm|.dtm|.far|.imf|.ice|.j2b|.m15|.mdl|.med|.mms|.mt2|.mtm|.nst|.okt|.plm|.psm|.pt36|.ptm|.sfx|.sfx2|.st26|.stk|.stm|.stp|.ult|.wow|.gdm|.mo3|.umx|.xpk|.ppm|.mmcmp"
-    library_@PLATFORM@="@LIBRARY_FILENAME@"/>
+    library_@PLATFORM@="@LIBRARY_FILENAME@">
+    <support>
+      <extension name=".mptm">
+        <description>30100</description>
+      </extension>
+      <extension name=".mod">
+        <description>30101</description>
+      </extension>
+      <extension name=".s3m">
+        <description>30102</description>
+      </extension>
+      <extension name=".xm">
+        <description>30103</description>
+      </extension>
+      <extension name=".it">
+        <description>30104</description>
+      </extension>
+      <extension name=".669">
+        <description>30105</description>
+      </extension>
+      <extension name=".amf">
+        <description>30106</description>
+      </extension>
+      <extension name=".ams">
+        <description>30107</description>
+      </extension>
+      <extension name=".c67">
+        <description>30108</description>
+      </extension>
+      <extension name=".dbm">
+        <description>30109</description>
+      </extension>
+      <extension name=".digi">
+        <description>30110</description>
+      </extension>
+      <extension name=".dmf">
+        <description>30111</description>
+      </extension>
+      <extension name=".dsm">
+        <description>30112</description>
+      </extension>
+      <extension name=".dtm">
+        <description>30113</description>
+      </extension>
+      <extension name=".far">
+        <description>30114</description>
+      </extension>
+      <extension name=".imf">
+        <description>30115</description>
+      </extension>
+      <extension name=".ice">
+        <description>30116</description>
+      </extension>
+      <extension name=".j2b">
+        <description>30117</description>
+      </extension>
+      <extension name=".m15">
+        <description>30118</description>
+      </extension>
+      <extension name=".mdl">
+        <description>30119</description>
+      </extension>
+      <extension name=".med">
+        <description>30120</description>
+      </extension>
+      <extension name=".mms">
+        <description>30121</description>
+      </extension>
+      <extension name=".mt2">
+        <description>30122</description>
+      </extension>
+      <extension name=".mtm">
+        <description>30123</description>
+      </extension>
+      <extension name=".nst">
+        <description>30124</description>
+      </extension>
+      <extension name=".okt">
+        <description>30125</description>
+      </extension>
+      <extension name=".plm">
+        <description>30126</description>
+      </extension>
+      <extension name=".psm">
+        <description>30127</description>
+      </extension>
+      <extension name=".pt36">
+        <description>30128</description>
+      </extension>
+      <extension name=".ptm">
+        <description>30129</description>
+      </extension>
+      <extension name=".sfx">
+        <description>30130</description>
+      </extension>
+      <extension name=".sfx2">
+        <description>30131</description>
+      </extension>
+      <extension name=".st26">
+        <description>30132</description>
+      </extension>
+      <extension name=".stk">
+        <description>30133</description>
+      </extension>
+      <extension name=".stm">
+        <description>30134</description>
+      </extension>
+      <extension name=".stp">
+        <description>30135</description>
+      </extension>
+      <extension name=".ult">
+        <description>30136</description>
+      </extension>
+      <extension name=".wow">
+        <description>30137</description>
+      </extension>
+      <extension name=".gdm">
+        <description>30138</description>
+      </extension>
+      <extension name=".mo3">
+        <description>30139</description>
+      </extension>
+      <extension name=".umx">
+        <description>30140</description>
+      </extension>
+      <extension name=".xpk">
+        <description>30141</description>
+      </extension>
+      <extension name=".ppm">
+        <description>30142</description>
+      </extension>
+      <extension name=".mmcmp">
+        <description>30143</description>
+      </extension>
+    </support>
+  </extension>
   <extension point="xbmc.addon.metadata">
     <platform>@PLATFORM@</platform>
     <license>GPL-2.0-or-later</license>
@@ -23,11 +157,13 @@
     <summary lang="de_DE">OpenMPT - Entdecken Sie die Musik darin...</summary>
     <summary lang="en_GB">OpenMPT - Discover the music inside...</summary>
     <summary lang="ko_KR">OpenMPT - 내부의 음악 발견...</summary>
+    <summary lang="ru_RU">OpenMPT - познайте музыку изнутри...</summary>
     <summary lang="zh_CN">OpenMPT - 发现内含的音乐...</summary>
     <description lang="da_DK">OpenMPT (forkortelse af Open ModPlug Tracker) er helt gratis, og biblioteket giver dig mulighed for at afspille fantastisk musik i Kodi.[CR][CR]Det understøtter indlæsning af filer i formaterne IT (Impulse Tracker), XM (FastTracker Extended Module), MOD (ProTracker og lignende), S3M (Scream Tracker 3) og MPTM (sit eget filformat) og importerer mange flere modul- og sample-filformater.[CR][CR]Se webstedet for en komplet liste over understøttede filformater.</description>
     <description lang="de_DE">OpenMPT (Abkürzung für Open ModPlug Tracker) ist völlig kostenlos und in seiner Bibliothek können Sie großartige Musik auf Ihrem Kodi wiedergeben.[CR][CR]Es unterstützt das Laden von IT- (Impulse Tracker), XM- (FastTracker Extended Module), MOD- (ProTracker und ähnliche), S3M- (Scream Tracker 3) und MPTM- (eigenes Dateiformat) Dateien und importiert viele weitere Modul- und Beispieldateiformate.[CR][CR]Auf seiner Website finden Sie eine vollständige Liste der unterstützten Typen.</description>
     <description lang="en_GB">OpenMPT (short hand for Open ModPlug Tracker) is completely free and his library allows you play back some great music on your Kodi.[CR][CR]It supports loading of IT (Impulse Tracker), XM (FastTracker Extended Module), MOD (ProTracker and similar), S3M (Scream Tracker 3) and MPTM (its own file format) files, imports many more module and sample file formats.[CR][CR]See his website for complete list of supported types.</description>
     <description lang="ko_KR">OpenMPT(Open ModPlug Tracker의 줄임말)는 완전히 무료이며 그 라이브러리를 통해 Kodi에서 멋진 음악을 재생할 수 있습니다.[CR][CR]IT(Impulse Tracker), XM(FastTracker Extended Module), MOD(ProTracker 및 유사), S3M(Scream Tracker 3) 및 MPTM(자체 파일 형식) 파일을 지원하고, 더 많은 모듈 및 샘플 파일 형식을 가져옵니다.[CR][CR]지원되는 형식의 전체 목록은 그 웹사이트를 참조하십시오.</description>
+    <description lang="ru_RU">OpenMPT (сокращение от Open ModPlug Tracker) полностью бесплатен, и его библиотека позволяет воспроизводить отличную музыку на вашем Kodi.[CR][CR]Он поддерживает загрузку файлов IT (Impulse Tracker), XM (FastTracker Extended Module), MOD (ProTracker и подобные), S3M (Scream Tracker 3) и MPTM (собственный формат файлов), импортирует многие другие форматы файлов модулей и сэмплов.[CR][CR]Полный список поддерживаемых типов смотрите на его сайте.</description>
     <description lang="zh_CN">OpenMPT（Open ModPlug Tracker 的缩写）是完全免费的，他的库允许您在 Kodi 上播放一些很棒的音乐。[CR][CR]它支持加载 IT（脉冲跟踪器）、XM（快速跟踪器扩展模块）、MOD（ProTracker 之类）、S3M（尖叫跟踪器3）和MPTM（其自身的文件格式）文件，导入更多的模块和示例文件格式。[CR][CR]有关支持的类型的完整列表，请访问他的网站。</description>
   </extension>
 </addon>
