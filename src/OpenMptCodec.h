@@ -20,7 +20,7 @@ struct ATTR_DLL_LOCAL MPTContext
 class ATTR_DLL_LOCAL CMPTCodec : public kodi::addon::CInstanceAudioDecoder
 {
 public:
-  CMPTCodec(KODI_HANDLE instance, const std::string& version);
+  CMPTCodec(const kodi::addon::IInstanceInfo& instance);
   virtual ~CMPTCodec();
 
   bool Init(const std::string& filename,
